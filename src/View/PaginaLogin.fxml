@@ -7,13 +7,13 @@
 <?import javafx.scene.text.Font?>
 <Pane xmlns:fx="http://javafx.com/fxml/1" fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="280.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8"
-      fx:controller="Controller.ControlePaginaLogin">
+      fx:controller="controller.PaginaLogim">
     <children>
         <Label layoutX="81.0" layoutY="98.0" text="Usuário"/>
         <TextField fx:id="txtUsuario" layoutX="125.0" layoutY="94.0" prefHeight="25.0" prefWidth="219.0"/>
         <Label layoutX="81.0" layoutY="139.0" text="Senha"/>
         <TextField fx:id="txtSenha" layoutX="125.0" layoutY="135.0" prefHeight="25.0" prefWidth="219.0"/>
-        <Button fx:id="btnAvançar" layoutX="125.0" layoutY="171.0" mnemonicParsing="false" onAction="#Avancar"
+        <Button fx:id="btnAvancar" layoutX="125.0" layoutY="171.0" mnemonicParsing="false" onAction="#avancar"
                 prefHeight="25.0" prefWidth="61.0" text="Login"/>
         <Label layoutX="41.0" layoutY="53.0" text="Welcome">
             <font>

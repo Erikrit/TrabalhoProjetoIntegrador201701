@@ -1,6 +1,9 @@
-package Controller;
+package controller;
 
-import Model.Login;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,11 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class ControlePaginaLogin implements Initializable{
+public class PaginaLogim implements Initializable{
 
 	
 	
@@ -35,17 +35,10 @@ public class ControlePaginaLogin implements Initializable{
 	public void Fechar(){
 		
 	}
-	public void Avancar() {
-
-		Login usuario = new Login();
-		 
-		usuario.setNome(txtUsuario.getText());
-		usuario.setSenha(txtSenha.getText());
+	public void avancar() {
 		
-		if(usuario.getNome().equals("erik") & usuario.getSenha().equals("1234")){
-			
 			URL arquivoFXML;
-			arquivoFXML = getClass().getResource("/View/PaginaCadastro.fxml");
+			arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);
@@ -54,10 +47,6 @@ public class ControlePaginaLogin implements Initializable{
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
-		}else{
-		
-		}
 			}
 	
 	}
