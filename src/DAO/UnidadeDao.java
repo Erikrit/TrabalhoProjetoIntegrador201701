@@ -1,6 +1,5 @@
 package DAO;
 
-import Model.Auditorio;
 import Model.CadastroBloco;
 import Model.Unidade;
 import daoUtil.ConnectionFactoryAuditorio;
@@ -91,4 +90,4 @@ public class UnidadeDao {
     }
 }
 
-}
+
