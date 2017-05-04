@@ -1,7 +1,8 @@
 package DAO;
 
 import Model.CadastroBloco;
-import daoUtil.ConnectionFactoryBloco;
+import daoUtil.ConnectionFactory;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,16 +13,16 @@ import java.util.List;
  */
 public class BlocoDao {
 
-    ConnectionFactoryBloco connection = null;
+    ConnectionFactory connection = null;
     private Connection con;
     private Statement stm;
     private PreparedStatement stmt;
 
     public BlocoDao() throws SQLException {
-        ConnectionFactoryBloco cf = new ConnectionFactoryBloco();
+        ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO bloco.blocos" + "(nome,unidade,descricao,sala)" +
+    String sqlSalvar =  "INSERT INTO projetoIntegrado.cadastroBlocos" + "(nome,unidade,descricao,sala)" +
             "VALUES(?,?,?,?)";
 
     public String salvar(CadastroBloco blocos) throws SQLException{

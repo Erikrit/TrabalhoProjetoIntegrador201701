@@ -1,6 +1,6 @@
 package DAO;
 
-import daoUtil.ConnectionFactoryCliente;
+import daoUtil.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +22,7 @@ public class ClienteDAO {
 
     public ClienteDAO() throws SQLException {
 
-        ConnectionFactoryCliente factory = new ConnectionFactoryCliente();
+        ConnectionFactory factory = new ConnectionFactory();
         con = factory.getConnection();
 
     }

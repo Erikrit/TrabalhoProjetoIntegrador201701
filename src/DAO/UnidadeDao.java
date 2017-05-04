@@ -1,9 +1,8 @@
 package DAO;
 
-import Model.Auditorio;
 import Model.CadastroBloco;
 import Model.Unidade;
-import daoUtil.ConnectionFactoryAuditorio;
+import daoUtil.ConnectionFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,16 +13,16 @@ import java.util.List;
  */
 public class UnidadeDao {
 
-    ConnectionFactoryAuditorio connection = null;
+    ConnectionFactory connection = null;
     private Connection con;
     private Statement stm;
     private PreparedStatement stmt;
 
     public UnidadeDao() throws SQLException {
-        ConnectionFactoryAuditorio cf = new ConnectionFactoryAuditorio();
+        ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO auditorio.cadastroAuditorio" + "(nome,endereco,telefone,cnpj,razaoSocial,blocos)" +
+    String sqlSalvar =  "INSERT INTO projetoIntegrado.cadastroUnidade" + "(nome,endereco,telefone,cnpj,razaoSocial,blocos)" +
             "VALUES(?,?,?,?,?,?)";
 
     public String salvar(Unidade unidade) throws SQLException{
@@ -91,4 +90,4 @@ public class UnidadeDao {
     }
 }
 
-}
+

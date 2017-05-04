@@ -2,7 +2,7 @@ package DAO;
 
 import Model.Auditorio;
 import Model.CadastroBloco;
-import daoUtil.ConnectionFactoryAuditorio;
+import daoUtil.ConnectionFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,16 +12,16 @@ import java.util.List;
  * Created by Ritchely on 04/05/2017.
  */
 public class AuditorioDao {
-    ConnectionFactoryAuditorio connection = null;
+    ConnectionFactory connection = null;
     private Connection con;
     private Statement stm;
     private PreparedStatement stmt;
 
     public AuditorioDao() throws SQLException {
-        ConnectionFactoryAuditorio cf = new ConnectionFactoryAuditorio();
+        ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO auditorio.cadastroAuditorio" + "(nome,capacidade,unidade,bloco,descricao)" +
+    String sqlSalvar =  "INSERT INTO projetoIntegrado.cadastroAuditorio" + "(nome,capacidade,unidade,bloco,descricao)" +
             "VALUES(?,?,?,?,?)";
 
     public String salvar(Auditorio auditorio) throws SQLException{
