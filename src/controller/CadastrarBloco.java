@@ -88,7 +88,7 @@ public class CadastrarBloco implements Initializable {
 		bloco.setNome(txtNome.getText());
 		bloco.setUnidade(comboUnidade.getValue());
 		bloco.setNumeroSalas(Integer.parseInt(txtSalas.getText()));
-
+		bloco.setDescricao(textDescricao.getText());
 
 
 	}

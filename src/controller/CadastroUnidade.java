@@ -53,6 +53,20 @@ public class CadastroUnidade implements Initializable {
 	}
 
 	public void btnSalvar(){
+
+	    validarCampos();
+
+
+        URL arquivoFXML;
+        arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+        Parent fxmlParent;
+        try {
+            fxmlParent = FXMLLoader.load(arquivoFXML);
+            painelPrincipal.getChildren().clear();
+            painelPrincipal.getChildren().add(fxmlParent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 		
 	}
 	public void btnCancelar(){
@@ -88,7 +102,10 @@ public class CadastroUnidade implements Initializable {
 
 		if(!unidade.getNome().equals("")|| unidade.getNome() != null){
 			if(!unidade.getEndereco().equals("") ||unidade.getEndereco() != null );
-			if(!u)
+			if(!unidade.getTelefone().equals("") || unidade.getTelefone() != null);
+			if(!unidade.getCnpj().equals("") || unidade.getCnpj() != null);
+			if(!unidade.getRazaoSocial().equals("") || unidade.getRazaoSocial() !=null);
+			if(unidade.getBlocos() != 0);
 					}
 
 

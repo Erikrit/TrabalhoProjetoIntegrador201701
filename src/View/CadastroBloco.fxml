@@ -21,7 +21,7 @@
       <Button fx:id="btnSalvar" layoutX="125.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
       <Button fx:id="btnCancelar" layoutX="413.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
       <ComboBox fx:id="comboUnidade" layoutX="115.0" layoutY="110.0" prefHeight="25.0" prefWidth="442.0" promptText="Escolha uma unidade" />
-      <TextArea fx:id="textDescriçao" layoutX="79.0" layoutY="230.0" prefHeight="130.0" prefWidth="442.0" />
+      <TextArea fx:id="textDescricao" layoutX="79.0" layoutY="230.0" prefHeight="130.0" prefWidth="442.0" />
       <Label layoutX="245.0" layoutY="182.0" text="Descrição">
          <font>
             <Font size="26.0" />

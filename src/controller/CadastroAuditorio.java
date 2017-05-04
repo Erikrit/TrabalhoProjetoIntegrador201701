@@ -18,7 +18,6 @@ import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 import sun.applet.Main;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -28,6 +27,9 @@ public class CadastroAuditorio implements Initializable{
 	Auditorio auditorio = new Auditorio();
 	Main main = new Main();
 	AuditorioDao auditorioDao = new AuditorioDao();
+	BlocoDao blocoDao = new BlocoDao();
+	CadastroBloco cadastroBloco = new CadastroBloco();
+
 	@FXML
 	private Pane painelPrincipal;
 	
@@ -38,9 +40,6 @@ public class CadastroAuditorio implements Initializable{
 	private TextField txtCapacidade;
 	
 	@FXML
-	private ComboBox<String> comboBloco;
-	
-	@FXML
 	private ComboBox<String> comboUnidade;
 	
 	@FXML
@@ -48,17 +47,16 @@ public class CadastroAuditorio implements Initializable{
 	@FXML
 	private Button btnCancelar;
 	@FXML
-	private TextArea txtareaDescricao;
+	private TextArea txtDescricao;
 
-	BlocoDao blocos = new BlocoDao ();
-	CadastroBloco blocoM =  new CadastroBloco();
 	public CadastroAuditorio() throws SQLException {
 	}
+
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		preencherComboUnidade();
-		preencherComboBloco();
+
 	}
 	public void btnCancelar(){
 		
@@ -101,17 +99,17 @@ public class CadastroAuditorio implements Initializable{
 		comboUnidade.getItems().add("Faculdade Alves Faria Perimetral");
 		comboUnidade.getItems().add("Faculdade Alves Faria SSP");
 	}
-	public void preencherComboBloco(){
-	comboBloco.getItems().add("A");
-}
+
+
+
+
 
 		public void pegarValores(Auditorio auditorio){
 
 			auditorio.setNome(txtNumero.getText());
-			auditorio.setBloco(comboBloco.getValue());
 			auditorio.setUnidade(comboUnidade.getValue());
 			auditorio.setCapacidade(Integer.parseInt(txtCapacidade.getText()));
-			//auditorio.setDescricao(txtareaDescricao.getText());
+			auditorio.setDescricao(txtDescricao.getText());
 		}
 
 		public void validarCampo(){
@@ -121,7 +119,7 @@ public class CadastroAuditorio implements Initializable{
 				if(auditorio.getCapacidade()!= 0 )
 					if(!auditorio.getNome().equals("") || auditorio.getNome() != null){
 					if(!auditorio.getUnidade().equals("") || auditorio.getUnidade()!= null){
-						JOptionPane.showInputDialog("salvo com sucesso");
+						exibeMensagem("Cadastro efetuado com sucesso");
 					}
 
 					}
